@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 3% 8% 0 8%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.buscet-title {
+    color: brown;
+    font-size: 30px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.buscet-container {
+    padding: 3% 8% 0 8%;
+}
+
+.buscet-content {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.item-sum {
+    padding-right: 10px;
+}
+
+.busket-card {
+    /* margin: auto; */
+    align-items: end;
+    display: flex;
+    /* justify-content: center; */
+    padding-bottom: 20px;
+}
+
+.item-name {
+    padding-right: 20px;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.item-btn-minus, .item-btn-plus {
+    padding: 5px 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: block;
+}
+
+.item-count {
+    font-size: 20px;
+    color: rgba(95, 30, 19, 0.6);
+}
+
+.card-cantainer {
+    padding-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    /* align-items: center; */
+    justify-content: space-around;
+
+}
+
+button {
+    border: none;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px 40px;
+}
+
+.filter-container {
+    padding: 20px;
+}
+
+.filter-form {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.filter-title {
+    color: brown;
+    font-size: 30px;
+    padding-bottom: 30px;
+}
+
+.filter-item {
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.card-img {
+    display: block;
+    width: 300px;
+}
+
+.card {
+    margin: 20px;
+    border: solid 2px rgb(119, 36, 36);
+    border-radius: 10px;
+}
+
+.btn-accept {
+    color: aliceblue;
+    background: rgb(79, 4, 4);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.btn-disable {
+    background: none;
+    text-decoration: underline;
+}
+
+.title {
+    padding-bottom: 10px;
+}
+
+.price {
+    padding-bottom: 15px;
+}
+
+.basket {
+    display: block;
+    width: 40px;
+    fill: brown;
+    margin-right: 10px;
+
+}
+
+.basket-container {
+    padding: 5px;
+    text-align: center;
+    align-items: end;
+    position: fixed;
+    left: 90%;
+    bottom: 92%;
+    display: flex;
+}
+
+.basket-count {
+    padding: 0;
+    color: brown;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.container-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.page-nav {
+    display: block;
+    font-size: 20px;
+    margin: 10px 30px 20px 30px;
+    text-align: center;
+    padding: 20px 25px;
+    border: 2px solid rebeccapurple;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: background-color 1s ease;
+    font-weight: 900;
+}
+
+.next-page {
+    padding: 20px 26px;
+}
+
+.minus-page {
+    padding: 20px 28px;
+}
+
+.numb-page {
+    padding: 20px 27px;
+}
+
+.btn-card {
+    margin-bottom: 10px;
+    padding: 20px;
+    font-size: 15px;
+}
+
+@media(hover:hover) {
+    button:hover {
+        cursor: pointer;
+    }
+
+    .card:hover {
+        box-shadow: 4px 4px 10px 4px rgba(95, 30, 19, 0.4);
+    }
+
+    .basket-container:hover {
+        cursor: pointer;
+    }
+
+    .page-nav:hover {
+        background-color: rebeccapurple;
+        color: white;
+    }
+
+    .btn-card:hover {
+        background: rgba(95, 30, 19, 0.4);
+        color: white;
+    }
+}
+
+@media(max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .filter-container {
+        text-align: center;
+    }
+
+    .card-cantainer {
+        padding: 0;
+    }
+
+    .card-img {
+        width: 200px;
+    }
+
+    .filter-form {
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+    }
+
+    .filter-item {
+        padding: 20px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .basket-container {
+        left: 88%;
+        bottom: 92%;
+    }
+
+    .basket {
+        width: 30px;
+        padding-left: 5px;
+    }
+
+    .basket-count {
+        font-size: 30px;
+    }
+
+
+}
+
+@media(max-width: 590px) {
+    .basket-container {
+        left: 83%;
+        bottom: 92%;
+    }
+
+    .page-nav {
+        margin: 20px 10px;
+    }
+}
