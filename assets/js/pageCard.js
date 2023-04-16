@@ -157,7 +157,7 @@ function createBasket() {
     return basketContainer
 }
 
-function pageCardRender() {
+export function pageCardRender() {
 
 
     const container = document.createElement('div');

@@ -1,3 +1,4 @@
+import { createModal } from './modal.js'
 const basketCount = document.querySelector('.basket-count')
 let count = 0;
 let basketTovar = [];
@@ -180,7 +181,10 @@ function createBtnSend() {
             body: formData
         })
             .then(response => response.json())
-            .then(data => console.log(sendForm))
+            .then((data) => {
+                document.querySelector('body').append(createModal())
+                console.log(sendForm)
+            })
             .catch(error => console.error(error));
     })
     return btnSend;

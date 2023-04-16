@@ -46,7 +46,8 @@
     text-decoration: underline;
 }
 
-.item-btn-minus, .item-btn-plus {
+.item-btn-minus,
+.item-btn-plus {
     padding: 5px 15px;
     margin-right: 10px;
     margin-left: 10px;
@@ -195,9 +196,43 @@ input[type="checkbox"] {
     font-size: 15px;
 }
 
+.modal-container {
+    height: 100%;
+    width: 100%;
+    background: rgba(41, 41, 41, 0.6);
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content {
+    padding: 50px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+}
+
+.modal-title {
+    padding-bottom: 30px;
+}
+
+.modal-btn {
+    background: rgba(95, 30, 19, 0.4);
+    transition: background 0.5s ease;
+}
+
 @media(hover:hover) {
     button:hover {
         cursor: pointer;
+    }
+
+    .modal-btn:hover {
+        background: rgba(95, 30, 19, 1 );
+        color: white;
     }
 
     .card:hover {
