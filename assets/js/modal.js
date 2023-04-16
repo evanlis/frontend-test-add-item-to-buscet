@@ -28,7 +28,8 @@ export function createModal() {
 
     modalContainer.addEventListener('click', (event) => {
         if (event.target.className === 'modal-container') {
-            modalContainer.setAttribute('hidden', '')
+            modalContainer.setAttribute('hidden', '');
+            const body = document.querySelector('body');
             body.style.overflow = ''
             body.textContent = ''
             pageCardRender()
