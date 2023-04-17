@@ -4,6 +4,12 @@ export let numberPage = 0;
 let pagesArr = [];
 let buskeItems = [];
 
+export function setCardVariableToDefault() {
+    numberPage = 0;
+    pagesArr = [];
+    buskeItems = [];
+}
+
 const filterContainer = document.createElement('div');
 filterContainer.classList.add('filter-container');
 
@@ -184,14 +190,6 @@ export function pageCardRender() {
             }
 
 
-        })
-        const btnsPlus = document.querySelectorAll('.item-btn-plus')
-
-        btnsPlus.forEach((btn) => {
-            btn.addEventListener('click', (event) => {
-                console.log(event)
-                // Добавьте код для обработки нажатия кнопки здесь
-            })
         })
 
         document.querySelector('body').append(createPageBusket(cardItem));

@@ -1,4 +1,5 @@
-import { pageCardRender } from './pageCard.js'
+import { pageCardRender, setCardVariableToDefault } from './pageCard.js'
+import { setBusketVariableToDefault } from './busket.js'
 export function createModal() {
     const modalContainer = document.createElement('div')
     modalContainer.classList.add('modal-container');
@@ -21,20 +22,31 @@ export function createModal() {
     modalContainer.append(modalContent);
 
     modalBtn.addEventListener('click', () => {
-        const body = document.querySelector('body');
-        body.textContent = ''
-        pageCardRender()
+        deleteBlockAndAdd()
     })
 
     modalContainer.addEventListener('click', (event) => {
         if (event.target.className === 'modal-container') {
-            modalContainer.setAttribute('hidden', '');
-            const body = document.querySelector('body');
+            deleteBlockAndAdd()
             body.style.overflow = ''
-            body.textContent = ''
-            pageCardRender()
         }
     })
 
     return modalContainer;
+}
+
+function deleteBlockAndAdd() {
+    const modalContainer = document.querySelector('.modal-container');
+    const buscetContainer = document.querySelector('.buscet-container');
+    const basketCount = document.querySelector('.basket-count');
+    const container = document.querySelector('.container');
+    const pagination = document.querySelector('.container-pagination');
+    const body = document.querySelector('body');
+    setCardVariableToDefault();
+    setBusketVariableToDefault();
+    modalContainer.remove();
+    buscetContainer.remove();
+    basketCount.textContent = '0';
+    container.style.display = 'flex';
+    pagination.style.display = 'flex';
 }

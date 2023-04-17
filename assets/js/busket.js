@@ -11,6 +11,19 @@ let sendForm = {
     }
 }
 
+export function setBusketVariableToDefault() {
+    count = 0;
+    basketTovar = [];
+    totalSumBusket = 0;
+    totalItemBusket = 0;
+    sendForm = {
+        items: [],
+        customer: {
+            phone: '777777777'
+        }
+    }
+}
+
 export function setCountOnclick() {
     count = ++count;
     return count
@@ -74,7 +87,7 @@ export function getCard(name, count, currentStr) {
     const currentArr = setMonyAndCurrent(currentStr);
     const mony = currentArr[1];
     const current = currentArr[0];
-    totalItemBusket += 1;
+    totalItemBusket += count;
     totalSumBusket += +(count * +current);
     sendForm.items.push({
         product: name,
@@ -108,6 +121,7 @@ export function getCard(name, count, currentStr) {
         console.log(btnPlus.parentNode.childNodes[0].textContent)
         totalItemBusket += 1;
         console.log(sendForm)
+        console.log('totalItemBusket' + ' ' + totalItemBusket)
         console.log(sendForm.items[0].product === 'Product 1')
         totalSumBusket += +(current);
         countItem.textContent = `${count} шт.`
