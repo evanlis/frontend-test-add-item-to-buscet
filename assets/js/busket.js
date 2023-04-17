@@ -79,7 +79,7 @@ export function createPageBusket(getCard) {
         return buscetContant.append(card)
     });
 
-    buscetContainer.append(buscetTitle, buscetContant, createTotalSum(), createBtnSend())
+    buscetContainer.append(buscetTitle, buscetContant, createTotalSum(), createPhoneForm(), createBtnSend())
     return buscetContainer;
 }
 
@@ -211,4 +211,38 @@ function changeQuantitySendForm(name, count) {
             sendForm.items[i].quantity = count;
         }
 
+}
+
+function createPhoneForm() {
+    const phoneContainer = document.createElement('div');
+    phoneContainer.classList.add('phone-container');
+
+    const phoneForm = document.createElement('form');
+    phoneForm.classList.add('phone-form')
+    phoneForm.setAttribute('for', 'phone');
+
+    const phone = document.createElement('input');
+    phone.classList.add('phone')
+    phone.type = 'tel';
+    phone.id = 'phone';
+    phone.name = 'phone';
+    // phone.required = true;
+    phone.addEventListener("input", function () {
+        sendForm.customer.phone = phone.value
+    });
+    phoneContainer.append(phoneForm, phone);
+    return phoneContainer;
+}
+
+function correctInputPhone() {
+    phone.addEventListener("input", function () {
+        sendForm.customer.phone = phone.value
+    })
+    //     let regex = /^\d{10}$/;
+    //     if (!regex.test(phone)) {
+    //         phoneInput.setCustomValidity("Введите 10 цифр номера телефона");
+    //     } else {
+    //         phoneInput.setCustomValidity("");
+    //     }
+    // });
 }
